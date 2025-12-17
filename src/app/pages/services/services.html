@@ -1,0 +1,191 @@
+<!-- Header de página -->
+<section class="relative text-white py-16 hero">
+  <div class="absolute inset-0"></div>
+  <div class="relative section-container">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-center">Nuestros Servicios</h1>
+    <p class="text-xl text-center text-gray-200 max-w-4xl mx-auto">
+      Ofrecemos un acompañamiento integral en la defensa y promoción de los derechos humanos
+    </p>
+  </div>
+</section>
+
+<!-- Líneas de Acción -->
+<section class="bg-white">
+  <div class="section-container">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Líneas de Acción</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Desarrollamos nuestro trabajo a través de seis líneas estratégicas de acción
+      </p>
+    </div>
+
+    <!-- Grid de servicios -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <article
+        *ngFor="let service of services; let i = index"
+        class="card group hover:border-primary-500 border-2 border-transparent"
+      >
+        <div class="flex items-start mb-4">
+          <div class="flex-shrink-0 mr-4">
+            <div
+              class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center group-hover:bg-accent-100 transition-colors duration-300"
+            >
+              <svg
+                class="w-6 h-6 text-primary-900 group-hover:text-accent-700 transition-colors duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                [attr.aria-label]="service.title"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  [attr.d]="getIconPath(service.icon || 'scale')"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">
+            {{ service.title }}
+          </h3>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed">
+          {{ service.description }}
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Actividades Principales -->
+<section class="bg-gray-50">
+  <div class="section-container">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Actividades Principales</h2>
+        <p class="text-lg text-gray-600">
+          Estas son las acciones concretas que realizamos para cumplir nuestra misión
+        </p>
+      </div>
+
+      <!-- Lista de actividades -->
+      <div class="space-y-4">
+        <div
+          *ngFor="let activity of activities; let i = index"
+          class="flex items-start bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <!-- Número -->
+          <div class="flex-shrink-0 mr-4">
+            <div
+              class="w-10 h-10 bg-accent-600 text-white rounded-full flex items-center justify-center font-bold"
+            >
+              {{ i + 1 }}
+            </div>
+          </div>
+
+          <!-- Actividad -->
+          <div class="flex-1">
+            <p class="text-gray-700 leading-relaxed text-lg">
+              {{ activity }}
+            </p>
+          </div>
+
+          <!-- Ícono check -->
+          <div class="flex-shrink-0 ml-4">
+            <svg
+              class="w-6 h-6 text-green-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de proceso -->
+<section class="bg-white">
+  <div class="section-container">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Nuestro Enfoque de Trabajo</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-8">
+        Trabajamos desde una perspectiva integral, fundamentándonos en la indivisibilidad e
+        interdependencia de todos los derechos y libertades. Desarrollamos actividades de
+        fortalecimiento, asesoría y acompañamiento jurídico e interdisciplinario, además de
+        participar en procesos de denuncia, interlocución e incidencia política, incluyendo litigios
+        estratégicos a nivel nacional e internacional.
+      </p>
+
+      <!-- Proceso en pasos -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <span class="text-2xl font-bold text-primary-900">1</span>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">Consulta Inicial</h3>
+          <p class="text-sm text-gray-600">Evaluamos tu caso y necesidades</p>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <span class="text-2xl font-bold text-primary-900">2</span>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">Análisis</h3>
+          <p class="text-sm text-gray-600">Investigamos y documentamos el caso</p>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <span class="text-2xl font-bold text-primary-900">3</span>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">Acompañamiento</h3>
+          <p class="text-sm text-gray-600">Te apoyamos en todo el proceso</p>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <span class="text-2xl font-bold text-primary-900">4</span>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">Seguimiento</h3>
+          <p class="text-sm text-gray-600">Garantizamos resultados efectivos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Final -->
+<section class="relative text-white py-16">
+  <div class="absolute inset-0 hero-bg"></div>
+  <div class="relative section-container text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Necesitas Alguno de Nuestros Servicios?</h2>
+    <p class="text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
+      Nuestro equipo está listo para brindarte el apoyo legal y humano que necesitas
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <app-cta-button text="Contáctanos Ahora" routerLink="/contacto" variant="secondary">
+      </app-cta-button>
+      <app-cta-button text="Conoce Más Sobre Nosotros" routerLink="/nosotros" variant="primary">
+      </app-cta-button>
+    </div>
+  </div>
+</section>

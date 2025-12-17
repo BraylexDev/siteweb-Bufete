@@ -1,0 +1,111 @@
+.hero-overlay{
+  background: radial-gradient(
+          70% 55% at 50% 50%,
+          #2a5d77 0%,
+          #184058 18%,
+          #0f2a43 34%,
+          #0a1b30 50%,
+          #071226 66%,
+          #040d1c 80%,
+          #020814 92%,
+          #01040d 97%,
+          #000309 100%
+        ),
+        radial-gradient(160% 130% at 10% 10%, rgba(0, 0, 0, 0) 38%, #000309 76%, #000208 100%),
+        radial-gradient(160% 130% at 90% 90%, rgba(0, 0, 0, 0) 38%, #000309 76%, #000208 100%);
+}
+
+/* Animación para las tarjetas de servicios */
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* Efecto hover para las actividades */
+.space-y-4 > div {
+  transition: all 0.3s ease;
+}
+
+.space-y-4 > div:hover {
+  transform: translateX(5px);
+}
+
+/* Sección */
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: radial-gradient(
+          70% 55% at 50% 50%,
+          #121d42 0%,
+          #0e1735 18%,
+          #04182a 34%,
+          #0a1b30 50%,
+          #071226 66%,
+          #040d1c 80%,
+          #020814 92%,
+          #01040d 97%,
+          #000309 100%
+        ),
+        radial-gradient(160% 130% at 10% 10%, rgba(0, 0, 0, 0) 38%, #000309 76%, #000208 100%),
+        radial-gradient(160% 130% at 90% 90%, rgba(0, 0, 0, 0) 38%, #000309 76%, #000208 100%);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+/* Fondo animado */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Seccion de valores */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  /* Gradiente corporativo profundo */
+  background:
+    radial-gradient(
+      ellipse at top left,
+      #041545 0%,
+      #172554 55%
+    );
+}
+
+/* GRAIN */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* Noise SVG embebido */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
+
+  opacity: 0.03;
+  animation: grainMove 6s steps(8) infinite;
+  pointer-events: none;
+}
+
+/* Grain movement */
+@keyframes grainMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-5%, -5%);
+  }
+}

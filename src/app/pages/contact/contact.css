@@ -1,0 +1,63 @@
+/* Animación de spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Estilos para campos de formulario */
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+/* Transiciones suaves */
+input,
+textarea,
+button {
+  transition: all 0.3s ease;
+}
+
+/* Seccion */
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: radial-gradient(
+          70% 55% at 50% 50%,
+          #121d42 0%,
+          #0e1735 18%,
+          #04182a 34%,
+          #0a1b30 50%,
+          #071226 66%,
+          #040d1c 80%,
+          #020814 92%,
+          #01040d 97%,
+          #000309 100%
+        ),
+        radial-gradient(160% 130% at 10% 10%, rgba(0, 0, 0, 0) 38%, #000309 76%, #000208 100%),
+        radial-gradient(160% 130% at 90% 90%, rgba(0, 0, 0, 0) 38%, #000309 76%, #000208 100%);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+/* Fondo animado */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+

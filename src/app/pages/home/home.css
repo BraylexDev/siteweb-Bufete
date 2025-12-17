@@ -1,0 +1,57 @@
+/* Animaciones suaves para las tarjetas */
+.hero-overlay {
+  background: linear-gradient(to left, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.6) 10%, rgba(15, 23, 42, 0.95) 100%);
+}
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Efecto parallax suave en el hero */
+@media (prefers-reduced-motion: no-preference) {
+  section {
+    scroll-behavior: smooth;
+  }
+}
+
+
+/* Seccion de valores */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  /* Gradiente corporativo profundo */
+  background:
+    radial-gradient(
+      ellipse at top left,
+      #041545 0%,
+      #172554 55%
+    );
+}
+
+/* GRAIN */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* Noise SVG embebido */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
+
+  opacity: 0.03;
+  animation: grainMove 6s steps(8) infinite;
+  pointer-events: none;
+}
+
+/* Grain movement */
+@keyframes grainMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-5%, -5%);
+  }
+}

@@ -1,0 +1,80 @@
+<header class="bg-gray-900 text-gray-300 shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <div class="flex items-center space-x-3 cursor-pointer" (click)="navigateHome()">
+        <img class="h-[60px] w-[60px] text-accent-500" fill="none" stroke="currentColor"aria-hidden="true"
+          alt="Logo"
+          src="../assets/images/logo.png"
+        />
+        <div>
+          <div class="text-lg font-bold tracking-tight">Ramírez y Hernández</div>
+          <div class="text-xs text-gray-300">Abogados & Asociados</div>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex space-x-8" role="navigation" aria-label="Navegación principal">
+        <a
+          *ngFor="let item of navItems"
+          [routerLink]="item.path"
+          routerLinkActive="border-b-2 border-accent-500 text-accent-500"
+          class="text-sm font-medium hover:text-accent-500 transition-colors duration-200 py-2"
+        >
+          {{ item.label }}
+        </a>
+      </nav>
+
+      <button
+        class="md:hidden p-2 rounded-md hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-accent-500"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="mobileMenuOpen"
+        aria-label="Abrir menú de navegación"
+      >
+        <svg
+          *ngIf="!mobileMenuOpen"
+          class="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+        <svg
+          *ngIf="mobileMenuOpen"
+          class="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <nav
+      *ngIf="mobileMenuOpen"
+      class="md:hidden pb-4 space-y-2 animate-fade-in"
+      role="navigation"
+      aria-label="Navegación móvil"
+    >
+      <a
+        *ngFor="let item of navItems"
+        [routerLink]="item.path"
+        routerLinkActive="bg-primary-800 text-accent-500"
+        (click)="closeMobileMenu()"
+        class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-800 transition-colors duration-200"
+      >
+        {{ item.label }}
+      </a>
+    </nav>
+  </div>
+</header>
