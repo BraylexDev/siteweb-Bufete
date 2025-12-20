@@ -42,16 +42,16 @@ export class CtaButton {
   @Input() variant: 'primary' | 'secondary' = 'primary';
   @Input() disabled: boolean = false;
   @Input() fullWidth: boolean = false;
-  
+
   get buttonClasses(): string {
     const base = 'px-6 py-3 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2';
     const width = this.fullWidth ? 'w-full' : '';
     const disabled = this.disabled ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-lg transform hover:-translate-y-0.5';
-    
-    const variant = this.variant === 'primary' 
+
+    const variant = this.variant === 'primary'
       ? 'bg-primary-900 text-white hover:bg-primary-800 focus:ring-primary-500'
       : 'bg-accent-600 text-white hover:bg-accent-700 focus:ring-accent-500';
-    
+
     return `${base} ${width} ${disabled} ${variant}`;
   }
 }
